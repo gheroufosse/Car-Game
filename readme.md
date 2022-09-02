@@ -1,5 +1,5 @@
-# Car game project made from Tech with Tim serie (YouTube)
+# Car game project
 
-# Testing Git
+This project has been realised by following the series made by Tech with Tim on YouTube.
+See references here : https://github.com/techwithtim/Pygame-Car-Racer
 
-# new branch

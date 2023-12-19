@@ -151,7 +151,6 @@ class AbstractCar:
 
 
 class ComputerCar(AbstractCar):
-
     IMG = GREEN_CAR
     START_POS = (135, 190)
 
@@ -163,7 +162,7 @@ class ComputerCar(AbstractCar):
 
     def draw_points(self, win):
         for point in self.path:
-            pygame.draw.circle(win, (255, 0, 0), point, 5.0)
+            pygame.draw.circle(win, (255, 0, 0), point, 1.0)
 
     def draw(self, win):
         super().draw(win)
@@ -214,7 +213,6 @@ class ComputerCar(AbstractCar):
 
 
 class PlayerCar(AbstractCar):
-
     IMG = RED_CAR
     START_POS = (160, 190)
 
@@ -242,7 +240,6 @@ def draw(win, images, player_car, computer_car, game_info):
 
 
 def move_player(player_car):
-
     keys = pygame.key.get_pressed()
     moved = False
 
@@ -263,7 +260,6 @@ def move_player(player_car):
 
 
 def handle_collision(player_car, computer_car, game_info):
-
     if player_car.collide(TRACK_BORDER_MASK) != None:
         player_car.bounce()
 
@@ -301,12 +297,11 @@ images = [
     (TRACK_BORDER, (0, 0)),
 ]
 player_car = PlayerCar(3, 3.5)
-computer_car = ComputerCar(1.8, 3.5, PATH)
+computer_car = ComputerCar(2.4, 3.48, PATH)
 
 game_info = GameInfo()
 
 while run:
-
     clock.tick(FPS)
     draw(WIN, images, player_car, computer_car, game_info)
 
@@ -344,4 +339,3 @@ while run:
         computer_car.reset()
 
 pygame.quit()
-
